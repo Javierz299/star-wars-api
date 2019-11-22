@@ -21,8 +21,7 @@ export default function Search(props) {
         const planet = event.target.planet.value
         console.log(planet)
 
-
-
+        
         fetch(`https://swapi.co/api/people/?search=${person}`)
             .then(res => {
                 if(res.ok){
@@ -33,8 +32,6 @@ export default function Search(props) {
             })
             .then(data => props.name(data.results))
             
-
-
     }
 
         return (

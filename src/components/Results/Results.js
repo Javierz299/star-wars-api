@@ -2,7 +2,7 @@ import React from 'react'
 import Result from '../Result/Result'
 
 export default function Display(props){
-    console.log('display:',props.names)
+    console.log('results:',props)
       
        
         return (
