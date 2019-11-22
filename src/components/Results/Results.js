@@ -1,27 +1,21 @@
 import React from 'react'
 import Result from '../Result/Result'
 
-export default function Display(props){
+export default function Results(props){
     console.log('results:',props)
       
-       
         return (
-           props.names.map(n => {
-               const name = n.name;
-               const height = n.height;
-               const mass = n.mass;
-               const hair_color = n.hair_color;
-               const gender = n.gender;
-
-               return (<Result 
-                        key={name}  
-                        name={name}
-                        height={height}
-                        mass={mass}
-                        hair_color={hair_color}
-                        gender={gender} 
-                        />)
-           })
-        )
-    }
+            props.names.map(n => {
+                const name = n.name;
+                const gender = n.gender;
+ 
+                return (<Result 
+                         key={name}  
+                         name={name}
+                         gender={gender} 
+                         />)
+            })
+         )
+      }
+    
 

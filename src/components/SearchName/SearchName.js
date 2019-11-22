@@ -10,16 +10,14 @@ import React from 'react'
     // "vehicles": "https://swapi.co/api/vehicles/"
 
 
-export default function Search(props) {
+export default function SearchName(props) {
 
-    const handleSubmitForm = (event) => {
+    const handleNameForm = (event) => {
         event.preventDefault();
         console.log('working')
 
         const person = event.target.name.value;
         console.log(person)
-        const planet = event.target.planet.value
-        console.log(planet)
 
         
         fetch(`https://swapi.co/api/people/?search=${person}`)
@@ -31,18 +29,17 @@ export default function Search(props) {
                 }
             })
             .then(data => props.name(data.results))
+
             
     }
 
         return (
-            <form onSubmit={handleSubmitForm}> 
+            <form onSubmit={handleNameForm}> 
                 <label htmlFor="name">Search by Name:</label>
                 <input id="name" name="name" placeholder="Darth Vader"></input>
                 <button>Search</button>
 
-                <label htmlFor="planet">Search by Planet:</label>
-                <input id="planet" name="planet" placeholder="Tatooine"></input>
-                <button>Search</button>
+                
             </form>
         )
     }
